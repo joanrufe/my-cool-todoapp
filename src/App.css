@@ -32,7 +32,41 @@
   padding: 20px;
 }
 
-.Category ul{
+/* .Category ul */
+
+.items ul{
   list-style: none;
-  text-align: left;
+  text-align: center;
+}
+
+.Category-title em{
+  padding: 3px 7px;
+}
+
+.Category-title em:hover{
+  background-color: rgba(155, 255, 144, 0.5);
+}
+
+.Item-value{
+  line-height: 30px;
+}
+.Item-created{
+  margin-left: 15px;
+}
+
+.Item-remove{
+  margin-left: 15px;
+  padding: 2px;
+  border: 2px lightcoral;   
+  background-color:white;
+  color: black;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+
+.Item-remove:hover{
+  border: 2px darkred;
+  background-color: red;
+  transition: all 0.2s;
 }

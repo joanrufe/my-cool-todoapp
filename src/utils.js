@@ -1,0 +1,1 @@
+export const log = (message,...params) =>  console.log(message, ...params)
