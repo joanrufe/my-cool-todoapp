@@ -4,12 +4,12 @@ export const mockTodos = [
       title: 'Shopping list',
       items: [
           {
-              itemId: 1,
+              id: 1,
               text: 'Tomato',
               checked: false
           },
           {
-              itemId: 2,
+              id: 2,
               text: 'Milk',
               checked: true
           }
@@ -20,12 +20,12 @@ export const mockTodos = [
       title: 'Things to do',
       items: [
           {
-              itemId: 1,
+              id: 1,
               text: 'Tomato',
               checked: false
           },
           {
-              itemId: 2,
+              id: 2,
               text: 'Milk',
               checked: false
           }

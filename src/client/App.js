@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import logo from './logo.svg'
-import api from './api/'
 import { CheckListContainer } from './checklist-component'
 import './App.css'
 
