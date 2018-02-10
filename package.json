@@ -12,6 +12,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^5.0.0",
     "loopback-connector-mongodb": "^3.4.1",
+    "loopback-connector-rest": "^3.1.0",
     "moment": "^2.20.1",
     "mongodb": "^3.0.2",
     "react": "^16.2.0",
@@ -34,14 +35,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "start": "node .",
+    "start": "node ./server/server.js",
     "posttest": "npm run lint && nsp check"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0",
     "nsp": "^2.1.0"
   },
   "repository": {

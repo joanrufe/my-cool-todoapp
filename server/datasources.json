@@ -1,12 +1,6 @@
 {
-  "database": {
-    "host": "localhost",
-    "port": 27017,
-    "url": "",
-    "database": "checklist",
-    "password": "checklist",
-    "name": "admin",
-    "user": "checklist",
-    "connector": "mongodb"
+  "db":{
+    "name": "db",
+    "connector": "memory"
   }
 }

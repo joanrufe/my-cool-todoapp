@@ -21,7 +21,7 @@
     "public": false
   },
   "ACL": {
-    "dataSource": "database",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {

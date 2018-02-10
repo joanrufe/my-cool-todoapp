@@ -11,7 +11,7 @@ let apiUrl;
 if (process.env.NODE_ENV === 'production'){
     apiUrl = `${window.location.origin}/api/Items` 
 }else{
-    apiUrl = 'http://localhost:3000/api/Items'
+    apiUrl = `http://localhost:3000/api/Items`
 }
 
 export default {
