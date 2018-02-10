@@ -41,11 +41,12 @@
     }
   },
   "files": {
-    "loopback#static": [{
-      "name": "build",
-      "paths": ["/"],
+    "loopback#static": {
+      "paths": [
+        "/"
+      ],
       "params": "$!../build"
-    }]
+    }
   },
   "final": {
     "loopback#urlNotFound": {}
