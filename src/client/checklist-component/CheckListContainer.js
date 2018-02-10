@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import {
   updateValueAC, addItemAC, removeItemAC, toggleAC,
-  reqItemsAC, reqDoneItemsAC, reqFailItemsAC,
+  reqItemsAC, reqDoneItemsAC, reqFailItemsAC, 
   reqDelItemAC, reqDelItemDoneAC, reqDelItemFailAC,
   reqPostItemAC, reqPostItemFailAC, reqPostItemDoneAC,
-  reqUpdateItemAC, reqUpdateItemDoneAC, reqUpdateItemFailAC
+  reqUpdateItemAC, reqUpdateItemDoneAC, reqUpdateItemFailAC,
+  cleanErrorsAC
 } from '../actions/'
 import api from '../api'
 import { Item } from '../reducers'
@@ -30,21 +31,21 @@ const mapDispatchToProps = dispatch => {
           dispatch(reqUpdateItemDoneAC(res))
           dispatch(toggleAC(item.id))
         })
-        .catch(err => dispatch(reqUpdateItemFailAC(err)))
+        .catch(err => dispatch(reqUpdateItemFailAC(err.message)))
     },
     onRemove: id => {
       dispatch(removeItemAC(id))
       dispatch(reqDelItemAC(id))
       api.deleteItem(id)
         .then(res => dispatch(reqDelItemDoneAC(res)))
-        .catch(err => dispatch(reqDelItemFailAC(err)))
+        .catch(err => dispatch(reqDelItemFailAC(err.message)))
     },
     onChange: val => dispatch(updateValueAC(val)),
     fetchData: () => {
       dispatch(reqItemsAC())
       return api.getAll()
         .then(res => dispatch(reqDoneItemsAC(res)))
-        .catch(err => dispatch(reqFailItemsAC(err)))
+        .catch(err => dispatch(reqFailItemsAC(err.message)))
     },
     submitValue: val => {
       const item = new Item(val)
@@ -54,8 +55,9 @@ const mapDispatchToProps = dispatch => {
           dispatch(reqPostItemDoneAC(res))
           dispatch(addItemAC(res))
         })
-        .catch(err => dispatch(reqPostItemFailAC(err)))
-    }
+        .catch(err => dispatch(reqPostItemFailAC(err.message)))
+    },
+    cleanErrors: () => dispatch(cleanErrorsAC())
   }
 }
 

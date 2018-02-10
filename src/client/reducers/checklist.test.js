@@ -3,7 +3,7 @@ import api from '../api'
 import _ from 'lodash'
 import { log } from '../utils'
 import {
-  actionTypes, addItemAC,
+  actionTypes, addItemAC,cleanErrorsAC,
   removeItemAC, toggleAC, updateValueAC,
   reqItemsAC, reqDoneItemsAC, reqFailItemsAC
 } from '../actions'
@@ -26,5 +26,17 @@ describe('checkListReducer - UI Action Types', () => {
     expect(addedItemState.items[index].checked).toBe(false)
     expect(toggledItemState.items[index].checked).toBe(true)
     expect(deletedItemState.items.length).toBe(0)
+  })
+  it('Dispatch failure and clean errors', () => {
+    // Arrange
+    const initialState = new CheckListState()
+
+    // Act
+    const errorState = checkListReducer(initialState, reqFailItemsAC('Error fetching items'))
+    const cleanErrorState = checkListReducer(initialState, cleanErrorsAC())
+
+    // Assert
+    expect(errorState.errors.length).toBe(1)
+    expect(cleanErrorState.errors.length).toBe(0)
   })
 })

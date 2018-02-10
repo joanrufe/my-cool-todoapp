@@ -75,3 +75,5 @@ export const reqUpdateItemFailAC = err => ({
   type: actionTypes.UPDATE_ITEMS_FAILURE,
   payload: err
 })
+
+export const cleanErrorsAC = () => ({ type: actionTypes.CLEAN_ERRORS })

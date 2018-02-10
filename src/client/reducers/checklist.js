@@ -67,6 +67,11 @@ export const checkListReducer = (state = new CheckListState(), action) => {
           action.payload
         ]
       }
+    case actionTypes.CLEAN_ERRORS:
+      return {
+        ...state,
+        errors: []
+      }
     default:
       return state
   }

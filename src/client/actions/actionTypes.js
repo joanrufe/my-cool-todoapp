@@ -4,6 +4,7 @@ export default {
   REMOVE_ITEM: 'REMOVE_ITEM',
   ADD_ITEM: 'ADD_ITEM',
   UPDATE_VALUE: 'UPDATE_VALUE',
+  CLEAN_ERRORS: 'CLEAN_ERRORS',
   // --------------API METHODS --------------/
               // ---- Get ----- //
   FETCH_ITEMS_REQUEST: 'FETCH_ITEMS_REQUEST',

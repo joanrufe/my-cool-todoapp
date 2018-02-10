@@ -8,10 +8,11 @@ export class CheckListApp extends Component {
 	}
 	render() {
 		const { onToggle, onRemove, submitValue,
-			currentValue, onChange, loading, errors } = this.props
+			currentValue, onChange, loading, errors, cleanErrors } = this.props
 		return (
 			<div className="items">
 				{loading && <h3><em>Loading...</em></h3>}
+				<button onClick={() => cleanErrors()} > Clean Errors </button>
 				{errors.map(err => <p className="error">{err}</p>)}
 				<ul>
 					{
